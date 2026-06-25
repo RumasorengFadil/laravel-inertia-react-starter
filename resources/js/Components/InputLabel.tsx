@@ -1,4 +1,5 @@
 import { LabelHTMLAttributes } from 'react';
+import { Label } from './ui/label';
 
 export default function InputLabel({
     value,
@@ -7,14 +8,14 @@ export default function InputLabel({
     ...props
 }: LabelHTMLAttributes<HTMLLabelElement> & { value?: string }) {
     return (
-        <label
+        <Label
             {...props}
             className={
-                `block text-sm font-medium text-gray-700 dark:text-gray-300 ` +
+                `` +
                 className
             }
         >
             {value ? value : children}
-        </label>
+        </Label>
     );
 }
