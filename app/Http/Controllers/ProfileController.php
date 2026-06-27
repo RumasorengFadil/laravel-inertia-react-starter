@@ -49,6 +49,8 @@ class ProfileController extends Controller
      */
     public function destroy(Request $request): RedirectResponse
     {
+        Gate::authorize('destroy', [$request->user(), User::class]);
+
         $request->validate([
             'password' => ['required', 'current_password'],
         ]);
