@@ -16,7 +16,7 @@ class SuperAdminRolePermission extends Seeder
     {
         app(PermissionRegistrar::class)->forgetCachedPermissions();
 
-        $user = Role::findByName('User');
+        $user = Role::findByName('Super Admin');
 
         $user->givePermissionTo([
             'users.create',

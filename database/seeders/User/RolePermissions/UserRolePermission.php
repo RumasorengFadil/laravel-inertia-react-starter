@@ -17,9 +17,6 @@ class UserRolePermission extends Seeder
 
         $user = Role::findByName('User');
 
-        $user->givePermissionTo([
-            'users.view',
-            'users.update',
-        ]);
+        $user->givePermissionTo([]);
     }
 }
