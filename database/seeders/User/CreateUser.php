@@ -23,6 +23,16 @@ class CreateUser extends Seeder
             ]
         );
 
+        $admin = User::create(
+            [
+                'email' => 'admin@example.com',
+                'name' => 'Admin',
+                'password' => bcrypt('password'),
+                'email_verified_at' => now(),
+                'remember_token' => Str::random(10),
+            ]
+        );
+
         $superadmin = User::create(
             [
                 'email' => 'superadmin@example.com',
@@ -34,6 +44,7 @@ class CreateUser extends Seeder
         );
 
         $user->assignRole('User');
+        $admin->assignRole('Admin');
         $superadmin->assignRole('Super Admin');
     }
 }
